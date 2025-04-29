@@ -28,7 +28,7 @@ class BannerResource extends Resource
                     ->maxLength(65535),
                 Forms\Components\FileUpload::make('gambar')
                     ->image()
-                    ->required()
+                    ->nullable()
                     ->directory('banners')
                     ->columnSpanFull(),
                 Forms\Components\TextInput::make('button_text')

@@ -18,4 +18,8 @@ class Banner extends Model
         'urutan',
         'status'
     ];
+
+    protected $casts = [
+        'status' => 'boolean',
+    ];
 }

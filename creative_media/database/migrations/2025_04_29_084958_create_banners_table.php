@@ -6,16 +6,13 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
         Schema::create('banners', function (Blueprint $table) {
             $table->id();
             $table->string('judul');
             $table->text('deskripsi')->nullable();
-            $table->string('gambar');
+            $table->string('gambar')->nullable(); // Nullable
             $table->string('button_text')->nullable();
             $table->string('button_link')->nullable();
             $table->integer('urutan')->default(0);
@@ -24,9 +21,6 @@ return new class extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('banners');
